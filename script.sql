@@ -18,7 +18,7 @@ create table tb_user(
 create table tb_food(
                         fid int unsigned not null auto_increment primary key,
                         foodName varchar(50),   -- 食物名称
-                        foodHeat int not null   -- xx千卡/100g
+                        foodHeat int not null   -- xx千焦/100g
 );
 
 #运动项目
@@ -29,20 +29,21 @@ create table tb_activity(
 );
 
 # 某人 某天 某餐 选择的 某种 食物
--- 如用户在早餐吃了鸡蛋和番茄，tb_diet分别插入鸡蛋和番茄的两个表项，每个表项中含<用户选择的食物,早||中||晚餐,该食物的重量,日期,已选择的该食物总千卡含量>
+-- 如某用户 id =1 在早餐吃了150g鸡蛋和200g番茄，tb_diet分别插入鸡蛋和番茄的两个表项，每个表项中含<用户选择的食物,早(1标识早餐)||中(2)||晚餐(3),该食物的重量,日期,已选择的该食物总千焦含量>
+-- heatConsume为 已选择的该食物总千焦含量 其值 =  选择的某种事物的重量g * xx千焦/100g  如200g番茄heatConsume = 200 * 15千焦/100g
 create table tb_diet(
                         did int unsigned not null auto_increment primary key,
                         uid int unsigned,         -- 用户id
                         fid int unsigned,         -- 食物id
                         bld int unsigned,         -- 标识早中晚餐 1-早餐,2-午餐,3-晚餐
                         ttime date,               -- 日期
-                        heatConsume int not null  -- xx千焦/30min
+                        heatConsume int not null  -- xx千焦
 );
 
 insert into tb_user(uname,passwd,gender,birthday,height,weight) values ('杨过','123456',1,CURDATE(),180,140);
 insert into tb_user(uname,passwd,gender,birthday,height,weight) values ('木婉清','111111',0,200010501,170,110);
 
-insert into tb_food(foodName, foodHeat) values('豆浆',31);	-- 31千焦
+insert into tb_food(foodName, foodHeat) values('豆浆',31);	-- 31千焦/100g
 insert into tb_food(foodName, foodHeat) values('酸奶',70);
 insert into tb_food(foodName, foodHeat) values('番茄',15);
 insert into tb_food(foodName, foodHeat) values('西瓜',32);
