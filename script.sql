@@ -21,13 +21,6 @@ create table tb_food(
                         foodHeat int not null   -- xx千卡/100g
 );
 
-# 运动项
-create table tb_activity(
-                            mid int unsigned not null auto_increment primary key,
-                            activityName varchar(50),   -- 活动名称
-                            heatConsume int not null    -- xx千卡/30min
-);
-
 #运动项目
 create table tb_activity(
                             mid int unsigned not null auto_increment primary key,
