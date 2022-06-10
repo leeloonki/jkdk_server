@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.tools.mapper.DietMapper">
+    <insert id="InsertDiet" parameterType="com.example.tools.pojo.Diet" >
+        insert into tb_diet(uid,fid,bld,ttime,heatConsume) VALUES
+            (#{uid},#{fid},#{bld},#{ttime},#{heatConsume})
+    </insert>
+
+    <select id="SelectDiet" resultType="com.example.tools.pojo.Diet">
+        select * from tb_diet  where uid = #{uid}
+    </select>
+</mapper>
