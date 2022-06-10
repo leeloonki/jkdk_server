@@ -43,13 +43,13 @@ create table tb_diet(
                         fid int unsigned,         -- 食物id
                         bld int unsigned,         -- 标识早中晚餐 1-早餐,2-午餐,3-晚餐
                         ttime date,               -- 日期
-                        heatConsume int not null  -- xx千卡/30min
+                        heatConsume int not null  -- xx千焦/30min
 );
 
 insert into tb_user(uname,passwd,gender,birthday,height,weight) values ('杨过','123456',1,CURDATE(),180,140);
 insert into tb_user(uname,passwd,gender,birthday,height,weight) values ('木婉清','111111',0,200010501,170,110);
 
-insert into tb_food(foodName, foodHeat) values('豆浆',31);
+insert into tb_food(foodName, foodHeat) values('豆浆',31);	-- 31千焦
 insert into tb_food(foodName, foodHeat) values('酸奶',70);
 insert into tb_food(foodName, foodHeat) values('番茄',15);
 insert into tb_food(foodName, foodHeat) values('西瓜',32);
@@ -57,7 +57,7 @@ insert into tb_food(foodName, foodHeat) values('火龙果',55);
 insert into tb_food(foodName, foodHeat) values('米饭',116);
 insert into tb_food(foodName, foodHeat) values('鸡蛋',140);
 
-insert into tb_activity(activityName, heatConsume) values('慢走',70);
+insert into tb_activity(activityName, heatConsume) values('慢走',70);   -- 70千卡
 insert into tb_activity(activityName, heatConsume) values('快走',120);
 insert into tb_activity(activityName, heatConsume) values('慢跑',210);
 insert into tb_activity(activityName, heatConsume) values('快跑',240);
