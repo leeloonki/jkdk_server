@@ -29,7 +29,7 @@ create table tb_activity(
 );
 
 # 某人 某天 某餐 选择的 某种 食物
--- 如某用户 id =1 在早餐吃了150g鸡蛋和200g番茄，tb_diet分别插入鸡蛋和番茄的两个表项，每个表项中含<用户选择的食物,早(1标识早餐)||中(2)||晚餐(3),该食物的重量,日期,已选择的该食物总千焦含量>
+-- 如某用户 uid =1 在早餐吃了150g鸡蛋和200g番茄，tb_diet分别插入鸡蛋和番茄的两个表项，每个表项中含<用户选择的食物,早(1标识早餐)||中(2)||晚餐(3),该食物的重量,日期,已选择的该食物总千焦含量>
 -- heatConsume为 已选择的该食物总千焦含量 其值 =  选择的某种事物的重量g * xx千焦/100g  如200g番茄heatConsume = 200 * 15千焦/100g
 create table tb_diet(
                         did int unsigned not null auto_increment primary key,
